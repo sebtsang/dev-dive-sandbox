@@ -96,7 +96,7 @@
       "id": "7",
       "title": "Write end‑to‑end tests for new write paths",
       "description": "Add Vitest/Supertest suites covering ticket assignment, saved view operations, audit log access control, and SQLite persistence.",
-      "status": "open",
+      "status": "done",
       "estimate_hours": 5,
       "design_notes": "Mock JWTs for admin and regular users to verify auth enforcement and use an in‑memory SQLite instance for deterministic tests.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/7",
@@ -109,8 +109,8 @@
   ],
   "ci": {
     "status": "passing",
-    "last_run": "2026-03-15T02:52:42Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23101941670"
+    "last_run": "2026-03-15T03:36:50Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23102618857"
   },
   "nudges": [],
   "commits": [
