@@ -24,7 +24,7 @@
       "priority": 1,
       "advice": "Implement the PATCH route, use Zod for payload validation, call MemoryTicketStore.assignTicket, and return the updated ticket with status 200. Add proper error handling for missing ticket (404) and validation errors (400).",
       "updated_at": "2026-03-15T08:40:42Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "30",
@@ -41,7 +41,7 @@
       "priority": 2,
       "advice": "Add an assignTicket method to MemoryTicketStore that updates the assignee field in the in‑memory map and emits any required events. Update the TicketStore interface accordingly.",
       "updated_at": "2026-03-15T08:40:42Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "31",
@@ -59,7 +59,7 @@
       "priority": 2,
       "advice": "Create UI controls (dropdown + button) in the ticket detail component, call the shared API client to PATCH /api/tickets/:id/assignee, and optimistically update local state on success.",
       "updated_at": "2026-03-15T08:40:07Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "32",
@@ -77,7 +77,7 @@
       "priority": 3,
       "advice": "Write Supertest integration tests for the assignment endpoint covering success, validation failures, and unauthorized access. Mock MemoryTicketStore to keep tests deterministic.",
       "updated_at": "2026-03-15T08:40:07Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "33",
@@ -95,7 +95,7 @@
       "priority": 2,
       "advice": "Start the SQLiteTicketStore implementation, define the schema, and add migration scripts under db/migrations.",
       "updated_at": "2026-03-15T08:40:07Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "34",
@@ -113,7 +113,7 @@
       "priority": 2,
       "advice": "Introduce an env variable (e.g., TICKET_STORE) and a factory in server/app.ts to instantiate the selected store.",
       "updated_at": "2026-03-15T08:40:07Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "35",
@@ -131,7 +131,7 @@
       "priority": 1,
       "advice": "Complete auth middleware: verify JWT, ensure admin claim, return 403 for non‑admin on /api/audit routes.",
       "updated_at": "2026-03-15T08:40:07Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "36",
@@ -150,7 +150,7 @@
       "priority": 3,
       "advice": "After SQLiteTicketStore is ready, add GET /api/audit endpoint and a corresponding admin‑only React panel.",
       "updated_at": "2026-03-15T08:40:07Z",
-      "advice_posted_at": ""
+      "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "41",
@@ -174,8 +174,8 @@
   ],
   "ci": {
     "status": "passing",
-    "last_run": "2026-03-15T08:46:23Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23106963375"
+    "last_run": "2026-03-15T09:06:49Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23107269498"
   },
   "nudges": [],
   "commits": [
@@ -184,6 +184,7 @@
       "summary": "Update CI run timestamps and workflow URL in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -191,6 +192,7 @@
       "summary": "Updates CI status timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -198,6 +200,7 @@
       "summary": "Update CI run timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -205,6 +208,7 @@
       "summary": "Update CI metadata timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -212,6 +216,7 @@
       "summary": "Updates CI metadata timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -219,6 +224,7 @@
       "summary": "Update CI run metadata in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -226,6 +232,7 @@
       "summary": "Update CI metadata timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -233,6 +240,7 @@
       "summary": "Updates CI metadata timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -240,6 +248,7 @@
       "summary": "Add a test comment in server/app.ts",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -247,6 +256,7 @@
       "summary": "Update CI run metadata in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -254,6 +264,7 @@
       "summary": "Update CI metadata timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -261,6 +272,7 @@
       "summary": "Update CI run metadata in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -268,6 +280,7 @@
       "summary": "Update CI metadata timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -275,6 +288,7 @@
       "summary": "Update CI run timestamps in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -282,6 +296,7 @@
       "summary": "Update CI run metadata in devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -289,6 +304,7 @@
       "summary": "Add a test comment in server app initialization.",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:15Z"
     },
     {
@@ -296,6 +312,7 @@
       "summary": "Update CI timestamps and remove a progress entry from devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:16Z"
     },
     {
@@ -310,6 +327,7 @@
         "33",
         "34"
       ],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:16Z"
     },
     {
@@ -320,6 +338,7 @@
         "33",
         "34"
       ],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:17Z"
     },
     {
@@ -330,6 +349,7 @@
         "30"
       ],
       "tasks_progressed": [],
+      "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:17Z"
     }
   ],
@@ -337,8 +357,8 @@
   "reviews": [],
   "init_commit": "22f40e1096c0f35ad8be1609bc73497f3304adc3",
   "sync": {
-    "last_issue_sync": "2026-03-15T08:42:32Z",
-    "last_evaluated_commit": "22f40e1096c0f35ad8be1609bc73497f3304adc3",
+    "last_issue_sync": "2026-03-15T09:07:28Z",
+    "last_evaluated_commit": "acd4c29ccf9db8535c50147d9f01ef0969174849",
     "last_readme_hash": "af308c6d432c56bb4b09e8d06d81d9bd30ce3aae",
     "last_readme_sync": "2026-03-15T08:40:14Z"
   }
