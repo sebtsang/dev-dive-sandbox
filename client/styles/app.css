@@ -1,0 +1,269 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #f6efe7;
+  background:
+    radial-gradient(circle at top left, rgba(250, 145, 92, 0.18), transparent 32%),
+    radial-gradient(circle at top right, rgba(105, 211, 199, 0.2), transparent 30%),
+    linear-gradient(135deg, #0e1c26 0%, #142b36 45%, #10212d 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+code {
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  padding: 2rem;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1,
+.panel h2,
+.callout h3 {
+  font-family: "Georgia", "Iowan Old Style", serif;
+  margin: 0;
+}
+
+.hero-copy {
+  max-width: 56rem;
+  color: #d3ddd8;
+}
+
+.hero-card,
+.panel {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(9, 16, 22, 0.6);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
+}
+
+.hero-card {
+  max-width: 22rem;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-card span,
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: #88c9c5;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr) 280px;
+  gap: 1rem;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panel {
+  padding: 1.1rem;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.count-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.32rem 0.72rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f7cba5;
+  font-size: 0.8rem;
+}
+
+.ticket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ticket-card {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  padding: 0.9rem;
+  text-align: left;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.04);
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+  cursor: pointer;
+}
+
+.ticket-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(247, 203, 165, 0.5);
+}
+
+.ticket-card.selected {
+  border-color: rgba(136, 201, 197, 0.9);
+  background: rgba(105, 211, 199, 0.08);
+}
+
+.ticket-card-header,
+.ticket-meta,
+.detail-row,
+.tag-row {
+  display: flex;
+  align-items: center;
+}
+
+.ticket-card-header,
+.ticket-meta,
+.detail-row {
+  justify-content: space-between;
+}
+
+.ticket-card p,
+.placeholder-panel p,
+.callout p,
+.detail-summary,
+.empty-state {
+  color: #c7d2cd;
+}
+
+.ticket-meta {
+  margin-top: 0.8rem;
+  color: #88c9c5;
+  font-size: 0.84rem;
+}
+
+.ticket-id {
+  color: #f7cba5;
+  font-family: "IBM Plex Mono", "SFMono-Regular", monospace;
+}
+
+.status-dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  margin-right: 0.5rem;
+}
+
+.status-new {
+  background: #f7cba5;
+}
+
+.status-triaged {
+  background: #75d5d0;
+}
+
+.status-investigating {
+  background: #ff8f5a;
+}
+
+.status-resolved {
+  background: #7fe39f;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 1rem;
+  margin: 1rem 0;
+}
+
+.detail-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 0.55rem;
+}
+
+.detail-row span {
+  color: #8da7a4;
+}
+
+.tag-row {
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tag-chip {
+  border-radius: 999px;
+  padding: 0.25rem 0.65rem;
+  background: rgba(247, 203, 165, 0.12);
+  color: #f7cba5;
+  font-size: 0.8rem;
+}
+
+.callout {
+  padding: 1rem;
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(255, 143, 90, 0.12), rgba(117, 213, 208, 0.08));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ghost-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(246, 239, 231, 0.6);
+}
+
+.empty-state {
+  margin: 0.25rem 0 0;
+}
+
+@media (max-width: 1080px) {
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 1rem;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
