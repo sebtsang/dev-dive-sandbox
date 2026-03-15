@@ -84,7 +84,7 @@
       "id": "33",
       "title": "Build SQLiteTicketStore with migrations",
       "description": "Create a SQLite-backed TicketStore implementation, schema migrations, and seed logic mirroring the in‑memory data shape.",
-      "status": "todo",
+      "status": "in_progress",
       "estimate_hours": 8,
       "design_notes": "Use the 'better-sqlite3' library for synchronous queries and store migration scripts under a new db/migrations folder.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/33",
@@ -102,7 +102,7 @@
       "id": "34",
       "title": "Wire server to use configurable TicketStore",
       "description": "Introduce an environment variable to select between MemoryTicketStore and SQLiteTicketStore at startup and inject the chosen store into the Express app.",
-      "status": "todo",
+      "status": "in_progress",
       "estimate_hours": 2,
       "design_notes": "Apply the factory pattern in server/app.ts to keep store selection isolated from route definitions.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/34",
@@ -385,6 +385,20 @@
         "32"
       ],
       "analysed_at": "2026-03-15T08:13:51Z"
+    },
+    {
+      "commit_hash": "bb16ec1",
+      "summary": "Updated devdive.json with detailed advice for tasks 29-34",
+      "tasks_updated": [],
+      "tasks_progressed": [
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
+      "analysed_at": "2026-03-15T08:28:50Z"
     }
   ],
   "state_commits": [],
