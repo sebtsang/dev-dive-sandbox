@@ -4,3 +4,7 @@ dist/
 .DS_Store
 coverage/
 
+
+# DevDive bootstrap
+web/node_modules/
+devdive.json

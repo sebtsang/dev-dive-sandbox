@@ -102,5 +102,6 @@ export function createApp(
     sendError(res, 500, 'Internal server error', detail);
   });
 
+  // test comment
   return app;
 }
