@@ -21,9 +21,9 @@
         "db"
       ],
       "priority": 1,
-      "advice": "",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": ""
+      "advice": "Add a migration to create/alter the `assignee` column, then implement `assignTicket` in `SQLiteTicketStore` using an UPDATE statement and return the updated ticket.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "43",
@@ -38,9 +38,9 @@
         "config"
       ],
       "priority": 2,
-      "advice": "",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": ""
+      "advice": "Create a `storeFactory` in `server/app.ts` that reads `process.env.SERVER_STORE` (default to memory) and returns the appropriate `TicketStore` instance. Refactor routes to accept the injected store.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "44",
@@ -56,9 +56,9 @@
         "api"
       ],
       "priority": 3,
-      "advice": "",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": ""
+      "advice": "Define a `SavedView` contract, add migration for `SQLiteSavedViews` table, and implement CRUD methods in a new `SQLiteSavedViewsStore`. Expose the routes via an Express router.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "45",
@@ -73,9 +73,9 @@
         "ui"
       ],
       "priority": 3,
-      "advice": "",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": ""
+      "advice": "After the saved‑views API is in place, build a `SavedViews.tsx` component that calls the endpoints, manages local state, and integrates with the ticket list filters.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "46",
@@ -90,9 +90,9 @@
         "auth"
       ],
       "priority": 1,
-      "advice": "",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": ""
+      "advice": "Implement JWT verification with the `jsonwebtoken` library, read the secret from an env var, check `payload.role === 'admin'`, and attach the middleware to `/api/audit/*`. Add unit tests for success and failure cases.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "47",
@@ -109,9 +109,9 @@
         "auth"
       ],
       "priority": 2,
-      "advice": "",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": ""
+      "advice": "Create an `SQLiteAuditLogStore` with `insert` and `fetchRecent` methods, secure the GET `/api/audit` route with the admin middleware, and add a React `AuditLog.tsx` panel that renders for admin users.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "48",
@@ -126,9 +126,9 @@
         "ci"
       ],
       "priority": 4,
-      "advice": "",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": ""
+      "advice": "Write end‑to‑end Vitest/Supertest tests for the saved‑views CRUD and audit‑log endpoints, including JWT auth scenarios. Spin up an in‑memory SQLite DB for the test runs.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "29",
@@ -144,9 +144,9 @@
         "validation"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "30",
@@ -161,9 +161,9 @@
         "store"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "31",
@@ -179,9 +179,9 @@
         "react"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "32",
@@ -197,9 +197,9 @@
         "api"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "33",
@@ -215,9 +215,9 @@
         "sqlite"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "34",
@@ -233,9 +233,9 @@
         "factory"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "35",
@@ -251,9 +251,9 @@
         "security"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "36",
@@ -270,9 +270,9 @@
         "sqlite"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
-      "advice_posted_at": "2026-03-15T09:06:59Z"
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
     },
     {
       "id": "41",
@@ -289,15 +289,49 @@
         "ui"
       ],
       "priority": 5,
-      "advice": "This task no longer appears aligned with the latest README intent and should be reviewed.",
-      "updated_at": "2026-03-15T09:24:06Z",
+      "advice": "Task was previously rejected; consider deleting or archiving.",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": "2026-03-15T09:26:47Z"
+    },
+    {
+      "id": "49",
+      "title": "Add pre‑test migration step to CI workflow",
+      "description": "Update `.github/workflows/ci.yml` to run database migrations before executing tests so that the SQLite schema (including the `assignee` column) is always up‑to‑date.",
+      "status": "todo",
+      "estimate_hours": 2,
+      "design_notes": "Follow-up issue generated from implementation review.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/49",
+      "labels": [
+        "ci",
+        "db"
+      ],
+      "priority": 2,
+      "advice": "",
+      "updated_at": "2026-03-15T09:26:46Z",
+      "advice_posted_at": ""
+    },
+    {
+      "id": "50",
+      "title": "Create integration test harness for SQLite store",
+      "description": "Provide a helper that initializes an in‑memory SQLite database, runs migrations, and seeds minimal data for the end‑to‑end tests of saved views and audit log endpoints.",
+      "status": "todo",
+      "estimate_hours": 2,
+      "design_notes": "Follow-up issue generated from implementation review.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/50",
+      "labels": [
+        "test",
+        "backend"
+      ],
+      "priority": 2,
+      "advice": "",
+      "updated_at": "2026-03-15T09:26:46Z",
       "advice_posted_at": ""
     }
   ],
   "ci": {
     "status": "failing",
-    "last_run": "2026-03-15T09:26:20Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23107570298"
+    "last_run": "2026-03-15T09:27:10Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23107582451"
   },
   "nudges": [
     {
@@ -305,207 +339,13 @@
       "created_at": "2026-03-15T09:26:29Z"
     }
   ],
-  "commits": [
-    {
-      "commit_hash": "ee9659a",
-      "summary": "Update CI last run timestamp and workflow URL in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:29Z"
-    },
-    {
-      "commit_hash": "c8b9b7f",
-      "summary": "Update CI timestamps and sync metadata in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "d1379b6",
-      "summary": "Update CI metadata timestamps in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:29Z"
-    },
-    {
-      "commit_hash": "8946ca5",
-      "summary": "No task-related changes detected.",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:28Z"
-    },
-    {
-      "commit_hash": "81a5e12",
-      "summary": "Update CI run timestamp and workflow URL in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "5a6c70a",
-      "summary": "Update CI run metadata timestamps and workflow URL in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:29Z"
-    },
-    {
-      "commit_hash": "72c4380",
-      "summary": "Update CI timestamps and sync metadata in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "9255761",
-      "summary": "Update CI metadata timestamps in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:29Z"
-    },
-    {
-      "commit_hash": "f7d8488",
-      "summary": "Update CI run metadata in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:29Z"
-    },
-    {
-      "commit_hash": "13b05cb",
-      "summary": "Update CI run metadata timestamps in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "178a30c",
-      "summary": "Update CI metadata timestamps and workflow URL in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "d65d626",
-      "summary": "Update CI status timestamps in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:29Z"
-    },
-    {
-      "commit_hash": "977e625",
-      "summary": "Add new task entries 42, 43, and 44 to devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:32Z"
-    },
-    {
-      "commit_hash": "97e1781",
-      "summary": "Fix ticket ID lowercasing and preserve assignee name in MemoryTicketStore assignment",
-      "tasks_updated": [],
-      "tasks_progressed": [
-        "29",
-        "30"
-      ],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:32Z"
-    },
-    {
-      "commit_hash": "b1950d7",
-      "summary": "Update CI run timestamps and workflow URL in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "595a098",
-      "summary": "Update CI timestamps and issue sync metadata in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "f65c560",
-      "summary": "Update CI status timestamps and workflow URL in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "c06af7c",
-      "summary": "Update CI metadata timestamps in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "c0629d5",
-      "summary": "Update CI run timestamps in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    },
-    {
-      "commit_hash": "034b7b5",
-      "summary": "Update CI run metadata timestamps in devdive.json",
-      "tasks_updated": [],
-      "tasks_progressed": [],
-      "status_decisions": [],
-      "analysed_at": "2026-03-15T09:26:30Z"
-    }
-  ],
+  "commits": [],
   "state_commits": [],
-  "reviews": [
-    {
-      "reviewed_at": "2026-03-15T09:26:28Z",
-      "findings": [
-        {
-          "file": "server/src/store/MemoryTicketStore.ts",
-          "finding": "Added assignTicket method while the corresponding task is marked rejected, introducing unused code and potential API surface drift.",
-          "severity": "warning",
-          "detected_at": "2026-03-15T09:26:28Z"
-        },
-        {
-          "file": "server/app.ts",
-          "finding": "Server still instantiates MemoryTicketStore directly; no factory or env var logic for selecting SQLiteTicketStore as planned in task 43.",
-          "severity": "warning",
-          "detected_at": "2026-03-15T09:26:28Z"
-        },
-        {
-          "file": "server/src/routes/ticketRoutes.ts",
-          "finding": "PATCH /api/tickets/:id/assignee endpoint exists despite assignment tasks being rejected, causing a mismatch between documented scope and implementation.",
-          "severity": "info",
-          "detected_at": "2026-03-15T09:26:28Z"
-        },
-        {
-          "file": "devdive.json",
-          "finding": "Tasks 30,31,32,33,34,35,36,41 are marked rejected but code artifacts for those features remain, indicating plan drift not synchronized with codebase.",
-          "severity": "warning",
-          "detected_at": "2026-03-15T09:26:28Z"
-        }
-      ]
-    }
-  ],
+  "reviews": [],
   "init_commit": "acd4c29ccf9db8535c50147d9f01ef0969174849",
   "sync": {
-    "last_issue_sync": "2026-03-15T09:25:14Z",
-    "last_evaluated_commit": "acd4c29ccf9db8535c50147d9f01ef0969174849",
+    "last_issue_sync": "2026-03-15T09:27:00Z",
+    "last_evaluated_commit": "8946ca5b9050313c371afc28062a92db685775f8",
     "last_readme_hash": "af308c6d432c56bb4b09e8d06d81d9bd30ce3aae",
     "last_readme_sync": "2026-03-15T09:24:13Z"
   }
