@@ -52,7 +52,7 @@ export class MemoryTicketStore implements TicketStore {
     const updatedTicket: Ticket = {
       ...ticket,
       assigneeId: assignee.id,
-      assigneeName: assignee.name,
+      assigneeName: ticket.assigneeName,
       updatedAt: new Date().toISOString()
     };
 
