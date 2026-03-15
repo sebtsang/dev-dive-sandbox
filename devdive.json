@@ -12,7 +12,7 @@
       "id": "29",
       "title": "Implement ticket assignment endpoint",
       "description": "Add PATCH /api/tickets/:id/assignee handler that validates payload, updates the ticket in the store, and returns the updated ticket or appropriate error codes.",
-      "status": "todo",
+      "status": "in_progress",
       "estimate_hours": 4,
       "design_notes": "Use existing validation utilities (e.g., Zod) and return 200 with the updated ticket to keep response shape consistent across APIs.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/29",
@@ -30,7 +30,7 @@
       "id": "30",
       "title": "Add assignment logic to MemoryTicketStore",
       "description": "Extend MemoryTicketStore to support updating a ticket's assignee field while preserving in‑memory state and emitting events for consistency.",
-      "status": "todo",
+      "status": "in_progress",
       "estimate_hours": 3,
       "design_notes": "Implement a new method assignTicket(id, assignee) adhering to the TicketStore interface for easy swapping with other stores.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/30",
@@ -48,7 +48,7 @@
       "id": "31",
       "title": "Create assignment UI controls in React",
       "description": "Build a dropdown of agents and an Assign button in the ticket detail view, calling the shared API client to PATCH the assignee.",
-      "status": "todo",
+      "status": "in_progress",
       "estimate_hours": 5,
       "design_notes": "Leverage the existing shared/api.ts client for type‑safe calls and update local state on success to avoid a full reload.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/31",
@@ -66,7 +66,7 @@
       "id": "32",
       "title": "Write tests for assignment flow",
       "description": "Add Vitest/Supertest cases covering successful assignment, validation failures, and 401/403 when not authorized.",
-      "status": "todo",
+      "status": "in_progress",
       "estimate_hours": 4,
       "design_notes": "Mock the MemoryTicketStore and reuse existing test setup to keep test suite fast and deterministic.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/32",
@@ -177,6 +177,148 @@
         "35"
       ],
       "analysed_at": "2026-03-15T08:04:33Z"
+    },
+    {
+      "commit_hash": "7d648ca",
+      "summary": "No task-related changes detected.",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:02Z"
+    },
+    {
+      "commit_hash": "e069778",
+      "summary": "Update CI run metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "f963676",
+      "summary": "Update CI status timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "6076fba",
+      "summary": "Update CI timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "77c7a37",
+      "summary": "Update CI run timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "18bba37",
+      "summary": "Update CI run timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "8d8322c",
+      "summary": "Update CI run metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "2c6a807",
+      "summary": "Update CI run metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "0cac877",
+      "summary": "Update CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:03Z"
+    },
+    {
+      "commit_hash": "636d17a",
+      "summary": "Update CI run timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "b9fc088",
+      "summary": "Update CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "992afd7",
+      "summary": "Update CI status timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "b54af14",
+      "summary": "Update CI run timestamp and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "1f0b6c4",
+      "summary": "Updates CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "25c618f",
+      "summary": "Update CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "18da8e6",
+      "summary": "Update CI run metadata timestamps and URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "b06446a",
+      "summary": "Updated task metadata, changing status to todo and adjusting estimates.",
+      "tasks_updated": [],
+      "tasks_progressed": [
+        "29",
+        "30",
+        "31",
+        "32"
+      ],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "bb2a2c7",
+      "summary": "Update devdive.json task IDs and descriptions for ticket assignment work",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T08:10:04Z"
+    },
+    {
+      "commit_hash": "151ac8a",
+      "summary": "Updated task definitions for ticket assignment endpoint, store method, and UI controls in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [
+        "29",
+        "30",
+        "31"
+      ],
+      "analysed_at": "2026-03-15T08:10:05Z"
     }
   ],
   "state_commits": [],
