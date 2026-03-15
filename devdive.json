@@ -1,0 +1,129 @@
+{
+  "meta": {
+    "version": "1.0"
+  },
+  "project": {
+    "name": "dev-dive-sandbox",
+    "repo": "sebtsang/dev-dive-sandbox",
+    "created_at": "2026-03-15T03:36:26Z"
+  },
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Implement ticket assignment PATCH endpoint",
+      "description": "Add full logic to `PATCH /api/tickets/:id/assignee` that validates payload, updates the ticket in MemoryTicketStore, and returns the updated ticket.",
+      "status": "open",
+      "estimate_hours": 5,
+      "design_notes": "Update the TicketStore interface to include an `assignTicket(id, assignee)` method and have MemoryTicketStore implement it, keeping the contract in shared/contracts.ts.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/1",
+      "labels": [
+        "backend",
+        "api",
+        "testing"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Add SQLiteTicketStore with assignment support",
+      "description": "Create a concrete SQLiteTicketStore that fulfills the TicketStore interface, handling reads, writes, and assignee updates using parameterized queries.",
+      "status": "open",
+      "estimate_hours": 8,
+      "design_notes": "Encapsulate all DB interactions in a repository class using better-sqlite3 for synchronous queries to simplify testing and error handling.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/2",
+      "labels": [
+        "backend",
+        "database",
+        "refactor"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Wire SQLite persistence via env configuration",
+      "description": "Introduce an environment variable to select between MemoryTicketStore and SQLiteTicketStore at server startup and initialize the SQLite DB with migration scripts.",
+      "status": "in_progress",
+      "estimate_hours": 4,
+      "design_notes": "Place migration SQL files under `server/migrations/` and run them on startup if the DB file does not exist.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/3",
+      "labels": [
+        "backend",
+        "database",
+        "devops"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Enforce admin-only access on audit log endpoints",
+      "description": "Update auth middleware to verify JWTs and check an `admin` role, returning 403 for non‑admin users on `/api/audit/*` routes.",
+      "status": "open",
+      "estimate_hours": 3,
+      "design_notes": "Leverage the existing middleware scaffold, injecting a role‑check function and adding type safety to the request user object.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/4",
+      "labels": [
+        "auth",
+        "backend",
+        "api"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Implement audit log storage and API",
+      "description": "Create an `audit_logs` table in SQLite, add a service to record actions (e.g., assignment changes), and expose `GET /api/audit` for admins.",
+      "status": "open",
+      "estimate_hours": 6,
+      "design_notes": "Use a singleton AuditLogService that writes entries via the SQLiteTicketStore to keep persistence concerns isolated.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/5",
+      "labels": [
+        "backend",
+        "database",
+        "api"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Build saved views CRUD UI and backend",
+      "description": "Add endpoints to create, read, update, delete saved queue views per user and integrate a new panel in the React client to manage them.",
+      "status": "open",
+      "estimate_hours": 7,
+      "design_notes": "Define a `SavedView` contract in shared/contracts.ts and store them in a new `saved_views` SQLite table linked to user IDs.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/6",
+      "labels": [
+        "frontend",
+        "backend",
+        "api"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Write end‑to‑end tests for new write paths",
+      "description": "Add Vitest/Supertest suites covering ticket assignment, saved view operations, audit log access control, and SQLite persistence.",
+      "status": "open",
+      "estimate_hours": 5,
+      "design_notes": "Mock JWTs for admin and regular users to verify auth enforcement and use an in‑memory SQLite instance for deterministic tests.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/7",
+      "labels": [
+        "testing",
+        "backend",
+        "frontend"
+      ]
+    }
+  ],
+  "ci": {
+    "status": "passing",
+    "last_run": "2026-03-15T02:52:42Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23101941670"
+  },
+  "nudges": [],
+  "commits": [
+    {
+      "commit_hash": "c90c91c",
+      "summary": "Add .env.example, CI workflow, .gitignore and README files",
+      "tasks_updated": [],
+      "tasks_progressed": [
+        "3"
+      ],
+      "analysed_at": "2026-03-15T03:36:28Z"
+    }
+  ],
+  "reviews": [],
+  "init_commit": "c90c91c4552ce221a79c9ec170df8cc3dac2ca14"
+}
