@@ -75,7 +75,7 @@ export function createApp(
           return;
         }
 
-        const ticket = await store.assignTicket(req.params.id, {
+        const ticket = await store.assignTicket(req.params.id.toLowerCase(), {
           assigneeId: req.body.assigneeId,
           note: req.body.note
         });
