@@ -5,140 +5,187 @@
   "project": {
     "name": "dev-dive-sandbox",
     "repo": "sebtsang/dev-dive-sandbox",
-    "created_at": "2026-03-15T06:52:33Z"
+    "created_at": "2026-03-15T08:04:32Z"
   },
   "tasks": [
     {
       "id": "29",
       "title": "Implement ticket assignment endpoint",
       "description": "Add PATCH /api/tickets/:id/assignee handler that validates payload, updates the ticket in the store, and returns the updated ticket or appropriate error codes.",
-      "status": "open",
-      "estimate_hours": 5,
+      "status": "todo",
+      "estimate_hours": 4,
       "design_notes": "Use existing validation utilities (e.g., Zod) and return 200 with the updated ticket to keep response shape consistent across APIs.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/29",
       "labels": [
         "backend",
         "api",
-        "testing"
-      ]
+        "assignment"
+      ],
+      "priority": 1,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     },
     {
       "id": "30",
       "title": "Add assignment logic to MemoryTicketStore",
       "description": "Extend MemoryTicketStore to support updating a ticket's assignee field while preserving in‑memory state and emitting events for consistency.",
-      "status": "open",
+      "status": "todo",
       "estimate_hours": 3,
       "design_notes": "Implement a new method assignTicket(id, assignee) adhering to the TicketStore interface for easy swapping with other stores.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/30",
       "labels": [
         "backend",
-        "refactor"
-      ]
+        "store",
+        "memory"
+      ],
+      "priority": 2,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     },
     {
       "id": "31",
       "title": "Create assignment UI controls in React",
       "description": "Build a dropdown of agents and an Assign button in the ticket detail view, calling the shared API client to PATCH the assignee.",
-      "status": "open",
-      "estimate_hours": 6,
+      "status": "todo",
+      "estimate_hours": 5,
       "design_notes": "Leverage the existing shared/api.ts client for type‑safe calls and update local state on success to avoid a full reload.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/31",
       "labels": [
         "frontend",
-        "api"
-      ]
+        "ui",
+        "assignment"
+      ],
+      "priority": 2,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     },
     {
       "id": "32",
       "title": "Write tests for assignment flow",
       "description": "Add Vitest/Supertest cases covering successful assignment, validation failures, and 401/403 when not authorized.",
-      "status": "open",
+      "status": "todo",
       "estimate_hours": 4,
       "design_notes": "Mock the MemoryTicketStore and reuse existing test setup to keep test suite fast and deterministic.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/32",
       "labels": [
         "testing",
-        "backend"
-      ]
+        "backend",
+        "assignment"
+      ],
+      "priority": 3,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     },
     {
       "id": "33",
       "title": "Build SQLiteTicketStore with migrations",
       "description": "Create a SQLite-backed TicketStore implementation, schema migrations, and seed logic mirroring the in‑memory data shape.",
-      "status": "open",
+      "status": "todo",
       "estimate_hours": 8,
       "design_notes": "Use the 'better-sqlite3' library for synchronous queries and store migration scripts under a new db/migrations folder.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/33",
       "labels": [
         "backend",
         "database",
-        "refactor"
-      ]
+        "store"
+      ],
+      "priority": 2,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     },
     {
       "id": "34",
       "title": "Wire server to use configurable TicketStore",
       "description": "Introduce an environment variable to select between MemoryTicketStore and SQLiteTicketStore at startup and inject the chosen store into the Express app.",
-      "status": "open",
-      "estimate_hours": 3,
+      "status": "todo",
+      "estimate_hours": 2,
       "design_notes": "Apply the factory pattern in server/app.ts to keep store selection isolated from route definitions.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/34",
       "labels": [
         "backend",
-        "refactor"
-      ]
+        "configuration",
+        "store"
+      ],
+      "priority": 2,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     },
     {
       "id": "35",
       "title": "Implement admin auth middleware and protect audit routes",
       "description": "Complete the placeholder auth middleware to verify JWT admin claims and reject non‑admin requests with 403 on audit‑related endpoints.",
-      "status": "open",
+      "status": "in_progress",
       "estimate_hours": 5,
       "design_notes": "Reuse existing auth utils, add role checking, and register the middleware only on /api/audit routes.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/35",
       "labels": [
-        "auth",
         "backend",
-        "api"
-      ]
+        "auth",
+        "security",
+        "audit"
+      ],
+      "priority": 1,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     },
     {
       "id": "36",
       "title": "Add audit log endpoint and frontend panel",
       "description": "Create GET /api/audit that returns recent audit entries from SQLite and display them in a new admin‑only panel in the React dashboard.",
-      "status": "open",
+      "status": "todo",
       "estimate_hours": 6,
       "design_notes": "Persist audit records via a dedicated SQLiteAuditLog table and conditionally render the panel based on user.role === 'admin'.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/36",
       "labels": [
         "backend",
         "frontend",
-        "auth"
-      ]
+        "audit",
+        "ui"
+      ],
+      "priority": 3,
+      "advice": "",
+      "updated_at": "2026-03-15T08:04:25Z",
+      "advice_posted_at": ""
     }
   ],
   "ci": {
     "status": "passing",
-    "last_run": "2026-03-15T07:02:53Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23105487283"
+    "last_run": "2026-03-15T07:03:54Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23105502417"
   },
   "nudges": [],
   "commits": [
     {
       "commit_hash": "9704126",
-      "summary": "Update .gitignore to ignore web/node_modules and devdive.json",
+      "summary": "Update .gitignore to ignore devdive bootstrap files",
       "tasks_updated": [],
       "tasks_progressed": [],
-      "analysed_at": "2026-03-15T06:52:35Z"
+      "analysed_at": "2026-03-15T08:04:32Z"
     },
     {
       "commit_hash": "c90c91c",
-      "summary": "Add project scaffolding: .env.example, CI workflow, .gitignore, and README",
+      "summary": "Add CI workflow, .env example, .gitignore, and README files",
       "tasks_updated": [],
-      "tasks_progressed": [],
-      "analysed_at": "2026-03-15T06:52:35Z"
+      "tasks_progressed": [
+        "35"
+      ],
+      "analysed_at": "2026-03-15T08:04:33Z"
     }
   ],
+  "state_commits": [],
   "reviews": [],
-  "init_commit": "9704126c0bd0d9a9a174ade111f004e19d1e059b"
+  "init_commit": "9704126c0bd0d9a9a174ade111f004e19d1e059b",
+  "sync": {
+    "last_issue_sync": "2026-03-15T08:04:32Z",
+    "last_evaluated_commit": "9704126c0bd0d9a9a174ade111f004e19d1e059b",
+    "last_readme_hash": "8a6790099700c7730672663b5adfe665f0c64cb3",
+    "last_readme_sync": "2026-03-15T08:04:32Z"
+  }
 }
