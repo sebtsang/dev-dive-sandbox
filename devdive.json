@@ -322,7 +322,49 @@
     }
   ],
   "state_commits": [],
-  "reviews": [],
+  "reviews": [
+    {
+      "reviewed_at": "2026-03-15T08:10:32Z",
+      "findings": [
+        {
+          "file": "server/routes/tickets.ts",
+          "finding": "Assignment endpoint still returns 501 stub instead of updating store and returning updated ticket",
+          "severity": "warning",
+          "detected_at": "2026-03-15T08:10:32Z"
+        },
+        {
+          "file": "server/store/MemoryTicketStore.ts",
+          "finding": "MemoryTicketStore lacks assignTicket method required by TicketStore interface",
+          "severity": "warning",
+          "detected_at": "2026-03-15T08:10:32Z"
+        },
+        {
+          "file": "server/app.ts",
+          "finding": "App hard‑codes MemoryTicketStore; no factory or env‑based store selection as planned",
+          "severity": "warning",
+          "detected_at": "2026-03-15T08:10:32Z"
+        },
+        {
+          "file": "server/middleware/auth.ts",
+          "finding": "Auth middleware currently bypasses verification, not enforcing admin checks on audit routes",
+          "severity": "warning",
+          "detected_at": "2026-03-15T08:10:32Z"
+        },
+        {
+          "file": "client/src/components/TicketDetail.tsx",
+          "finding": "Ticket detail UI missing assignment dropdown and button per UI plan",
+          "severity": "info",
+          "detected_at": "2026-03-15T08:10:32Z"
+        },
+        {
+          "file": "shared/api.ts",
+          "finding": "Shared API client does not expose a type‑safe assignTicket call",
+          "severity": "info",
+          "detected_at": "2026-03-15T08:10:32Z"
+        }
+      ]
+    }
+  ],
   "init_commit": "9704126c0bd0d9a9a174ade111f004e19d1e059b",
   "sync": {
     "last_issue_sync": "2026-03-15T08:04:32Z",
