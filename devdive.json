@@ -12,7 +12,7 @@
       "id": "29",
       "title": "Implement ticket assignment endpoint",
       "description": "Add PATCH /api/tickets/:id/assignee handler that validates the request payload, updates the ticket in the store, and returns the updated ticket or appropriate error codes.",
-      "status": "complete",
+      "status": "todo",
       "estimate_hours": 4,
       "design_notes": "Use existing Zod validation utilities, return HTTP 200 with the updated ticket JSON to keep response shape consistent across APIs.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/29",
@@ -23,14 +23,14 @@
       ],
       "priority": 1,
       "advice": "Implement the PATCH route, use Zod for payload validation, call MemoryTicketStore.assignTicket, and return the updated ticket with status 200. Add proper error handling for missing ticket (404) and validation errors (400).",
-      "updated_at": "2026-03-15T08:40:07Z",
+      "updated_at": "2026-03-15T08:40:42Z",
       "advice_posted_at": ""
     },
     {
       "id": "30",
       "title": "Add assignment logic to MemoryTicketStore",
       "description": "Extend MemoryTicketStore to support updating a ticket's assignee field while preserving in‑memory state and emitting events for consistency.",
-      "status": "complete",
+      "status": "todo",
       "estimate_hours": 3,
       "design_notes": "Introduce a new assignTicket(id, assignee) method that conforms to the TicketStore interface; ensure existing get/set methods remain unchanged.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/30",
@@ -40,7 +40,7 @@
       ],
       "priority": 2,
       "advice": "Add an assignTicket method to MemoryTicketStore that updates the assignee field in the in‑memory map and emits any required events. Update the TicketStore interface accordingly.",
-      "updated_at": "2026-03-15T08:40:07Z",
+      "updated_at": "2026-03-15T08:40:42Z",
       "advice_posted_at": ""
     },
     {
@@ -174,8 +174,8 @@
   ],
   "ci": {
     "status": "passing",
-    "last_run": "2026-03-15T08:36:40Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23106822141"
+    "last_run": "2026-03-15T08:40:37Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23106880109"
   },
   "nudges": [],
   "commits": [
@@ -337,7 +337,7 @@
   "reviews": [],
   "init_commit": "22f40e1096c0f35ad8be1609bc73497f3304adc3",
   "sync": {
-    "last_issue_sync": "2026-03-15T08:40:14Z",
+    "last_issue_sync": "2026-03-15T08:40:58Z",
     "last_evaluated_commit": "22f40e1096c0f35ad8be1609bc73497f3304adc3",
     "last_readme_hash": "af308c6d432c56bb4b09e8d06d81d9bd30ce3aae",
     "last_readme_sync": "2026-03-15T08:40:14Z"
