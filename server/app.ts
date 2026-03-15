@@ -8,7 +8,12 @@ import type {
 } from '../shared/contracts';
 import { seedAgents, seedTickets } from './data';
 import { requireAdmin } from './lib/auth';
-import { MemoryTicketStore, type TicketStore } from './lib/store';
+import {
+  AssigneeNotFoundError,
+  MemoryTicketStore,
+  TicketNotFoundError,
+  type TicketStore
+} from './lib/store';
 
 function sendError(
   res: Response<ApiError>,
@@ -65,25 +70,28 @@ export function createApp(
     requireAdmin,
     async (req: Request<{ id: string }, unknown, Partial<AssignmentRequest>>, res, next) => {
       try {
-        const ticket = await store.getTicket(req.params.id);
-
-        if (!ticket) {
-          sendError(res, 404, 'Not found', `Ticket ${req.params.id} does not exist.`);
-          return;
-        }
-
         if (!req.body.assigneeId) {
           sendError(res, 400, 'Validation failed', 'assigneeId is required.');
           return;
         }
 
-        sendError(
-          res,
-          501,
-          'Not implemented',
-          'Assignment is a planned follow-up scenario. The baseline stays read-only.'
-        );
+        const ticket = await store.assignTicket(req.params.id, {
+          assigneeId: req.body.assigneeId,
+          note: req.body.note
+        });
+
+        res.json(ticket);
       } catch (error) {
+        if (error instanceof TicketNotFoundError) {
+          sendError(res, 404, 'Not found', error.message);
+          return;
+        }
+
+        if (error instanceof AssigneeNotFoundError) {
+          sendError(res, 400, 'Validation failed', error.message);
+          return;
+        }
+
         next(error);
       }
     }
@@ -96,4 +104,3 @@ export function createApp(
 
   return app;
 }
-

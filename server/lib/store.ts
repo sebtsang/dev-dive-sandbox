@@ -4,6 +4,9 @@ import type {
   Ticket
 } from '../../shared/contracts';
 
+export class TicketNotFoundError extends Error {}
+export class AssigneeNotFoundError extends Error {}
+
 export interface TicketStore {
   listTickets(): Promise<Ticket[]>;
   getTicket(id: string): Promise<Ticket | null>;
@@ -33,8 +36,29 @@ export class MemoryTicketStore implements TicketStore {
     return this.tickets.get(id) ?? null;
   }
 
-  async assignTicket(_id: string, _input: AssignmentRequest): Promise<Ticket> {
-    throw new Error('Assignment persistence is not implemented in the memory baseline.');
+  async assignTicket(id: string, input: AssignmentRequest): Promise<Ticket> {
+    const ticket = this.tickets.get(id);
+
+    if (!ticket) {
+      throw new TicketNotFoundError(`Ticket ${id} does not exist.`);
+    }
+
+    const assignee = this.agents.find((candidate) => candidate.id === input.assigneeId);
+
+    if (!assignee) {
+      throw new AssigneeNotFoundError(`Agent ${input.assigneeId} does not exist.`);
+    }
+
+    const updatedTicket: Ticket = {
+      ...ticket,
+      assigneeId: assignee.id,
+      assigneeName: assignee.name,
+      updatedAt: new Date().toISOString()
+    };
+
+    this.tickets.set(id, updatedTicket);
+
+    return updatedTicket;
   }
 
   async listAgents(): Promise<Agent[]> {
@@ -61,4 +85,3 @@ export class SQLiteTicketStore implements TicketStore {
     throw new Error(`SQLite persistence is planned but not wired: ${this.filename}`);
   }
 }
-

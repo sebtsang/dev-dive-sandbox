@@ -39,15 +39,27 @@ describe('support queue sandbox api', () => {
     });
   });
 
-  it('keeps assignment flow intentionally unimplemented', async () => {
+  it('assigns a ticket through the API', async () => {
     const response = await request(app)
       .patch('/api/tickets/SQ-1002/assignee')
       .send({ assigneeId: 'agt_olivia' });
 
-    expect(response.status).toBe(501);
+    expect(response.status).toBe(200);
     expect(response.body).toMatchObject({
-      error: 'Not implemented'
+      id: 'SQ-1002',
+      assigneeId: 'agt_olivia',
+      assigneeName: 'Olivia Vega'
+    });
+  });
+
+  it('rejects unknown assignees', async () => {
+    const response = await request(app)
+      .patch('/api/tickets/SQ-1001/assignee')
+      .send({ assigneeId: 'agt_unknown' });
+
+    expect(response.status).toBe(400);
+    expect(response.body).toMatchObject({
+      error: 'Validation failed'
     });
   });
 });
-

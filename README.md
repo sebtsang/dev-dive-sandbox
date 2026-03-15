@@ -6,14 +6,14 @@ Support Queue Sandbox is a deliberately unfinished TypeScript support dashboard 
 
 The app models a support operations queue for B2B customers. Agents can inspect incoming tickets, review ticket detail, and understand which issues are currently triaged, under investigation, or still new.
 
-This baseline intentionally stops short of operational workflows. Ticket assignment, saved queue views, SQLite persistence, and an admin-only audit log are all planned but not built. Those gaps are the primary follow-up work DevDive should plan.
+This baseline intentionally stops short of full operational workflows. Ticket assignment now works in the in-memory backend, but saved queue views, SQLite persistence, frontend assignment controls, and an admin-only audit log are still planned. Those gaps are the primary follow-up work DevDive should plan.
 
 ## Current architecture
 
 - `client/`: React + Vite dashboard for browsing tickets and viewing placeholders for planned features.
-- `server/`: Express API with seeded in-memory ticket data and a stubbed assignment endpoint.
+- `server/`: Express API with seeded in-memory ticket data and a working memory-backed assignment endpoint.
 - `shared/`: common TypeScript contracts and a shared browser API client.
-- `tests/`: Vitest + Supertest coverage for the server read flows and the intentional `501` assignment stub.
+- `tests/`: Vitest + Supertest coverage for the server read flows plus memory-backed assignment behavior.
 - `.github/workflows/ci.yml`: CI fixture that runs install, typecheck, lint, and test.
 
 The server exposes a `TicketStore` interface plus two adapters:
@@ -28,18 +28,19 @@ Admin auth also exists only as scaffolding. The middleware is present, but it cu
 - `GET /api/health`
 - `GET /api/tickets`
 - `GET /api/tickets/:id`
+- `PATCH /api/tickets/:id/assignee` against the in-memory store
 - Responsive frontend for browsing seeded tickets
 - Shared contracts between client and server
-- Passing tests around the current read-only flows
+- Passing tests around the current API flows and store behavior
 
 ## Known missing pieces
 
-- `PATCH /api/tickets/:id/assignee` validates input but always returns `501 Not implemented`
+- Assignment works only in the in-memory store; there is still no SQLite-backed write path
 - Saved views panel is placeholder UI only
 - Audit log panel is placeholder UI only
 - No SQLite database or migrations
 - No real authentication or admin-only access control
-- No write-path tests yet
+- No frontend assignment controls yet
 
 ## Recommended DevDive prompt
 
@@ -83,8 +84,7 @@ SQLite persistence and admin authentication are not built yet. The baseline expo
 
 ## Suggested first follow-up commits
 
-- Implement the assignment write path in the server and memory store.
 - Add assignment controls to the frontend using the shared API client.
+- Persist assignment writes beyond the memory store.
 - Break a contract or a test to trigger CI watcher behavior.
 - Introduce an architectural shortcut to test DevDive design review output.
-

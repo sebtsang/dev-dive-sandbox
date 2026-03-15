@@ -60,16 +60,16 @@ export function TicketDetail({ ticket }: TicketDetailProps) {
       </div>
 
       <div className="callout">
-        <h3>Assignment flow is intentionally incomplete</h3>
+        <h3>Assignment works in the API, but the UI is still missing</h3>
         <p>
-          The API already exposes <code>PATCH /api/tickets/:id/assignee</code>, but it returns a
-          501 response so DevDive has an obvious backend task to plan.
+          The memory-backed API now supports <code>PATCH /api/tickets/:id/assignee</code>. This
+          screen still keeps the action disabled so the frontend integration remains a separate
+          ticket.
         </p>
         <button className="ghost-button" disabled type="button">
-          Assign ticket (planned)
+          Assign ticket (frontend pending)
         </button>
       </div>
     </section>
   );
 }
-

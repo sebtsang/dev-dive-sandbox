@@ -23,21 +23,7 @@ The generated work should cover most or all of these labels:
 
 ## Scripted follow-up scenarios
 
-### Scenario 1: implement backend assignment
-
-Goal:
-Make `PATCH /api/tickets/:id/assignee` actually update the in-memory store and return the updated ticket.
-
-Suggested commit theme:
-`feat: implement ticket assignment endpoint`
-
-Expected DevDive behavior:
-
-- Commit analysis should mention assignment or ticket ownership changes.
-- One backend or API task should move to `in_progress` or `done`.
-- The dashboard should show a new commit analysis entry tied to the appropriate issue.
-
-### Scenario 2: wire frontend assignment UI
+### Scenario 1: wire frontend assignment UI
 
 Goal:
 Replace the disabled assignment button with a real control that calls the shared API client and updates the detail view.
@@ -50,6 +36,20 @@ Expected DevDive behavior:
 - Commit analysis should identify frontend progress.
 - At least one frontend-labelled task should move forward.
 - The planner's design notes should still align because the shared API client remains the integration path.
+
+### Scenario 2: persist assignment beyond memory
+
+Goal:
+Move assignment writes from the memory store into a SQLite-backed implementation without breaking the shared store interface.
+
+Suggested commit theme:
+`feat: persist ticket assignment in sqlite`
+
+Expected DevDive behavior:
+
+- Commit analysis should mention database or backend progress.
+- Store swappability should remain intact because `TicketStore` is still the abstraction boundary.
+- Review findings should stay quiet if the persistence change does not leak into the client.
 
 ### Scenario 3: break CI intentionally
 
