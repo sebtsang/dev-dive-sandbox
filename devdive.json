@@ -330,8 +330,8 @@
   ],
   "ci": {
     "status": "failing",
-    "last_run": "2026-03-15T09:33:48Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23107687208"
+    "last_run": "2026-03-15T09:34:47Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23107703103"
   },
   "nudges": [
     {
