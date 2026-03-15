@@ -305,7 +305,171 @@
       "created_at": "2026-03-15T09:26:29Z"
     }
   ],
-  "commits": [],
+  "commits": [
+    {
+      "commit_hash": "ee9659a",
+      "summary": "Update CI last run timestamp and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:29Z"
+    },
+    {
+      "commit_hash": "c8b9b7f",
+      "summary": "Update CI timestamps and sync metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "d1379b6",
+      "summary": "Update CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:29Z"
+    },
+    {
+      "commit_hash": "8946ca5",
+      "summary": "No task-related changes detected.",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:28Z"
+    },
+    {
+      "commit_hash": "81a5e12",
+      "summary": "Update CI run timestamp and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "5a6c70a",
+      "summary": "Update CI run metadata timestamps and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:29Z"
+    },
+    {
+      "commit_hash": "72c4380",
+      "summary": "Update CI timestamps and sync metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "9255761",
+      "summary": "Update CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:29Z"
+    },
+    {
+      "commit_hash": "f7d8488",
+      "summary": "Update CI run metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:29Z"
+    },
+    {
+      "commit_hash": "13b05cb",
+      "summary": "Update CI run metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "178a30c",
+      "summary": "Update CI metadata timestamps and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "d65d626",
+      "summary": "Update CI status timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:29Z"
+    },
+    {
+      "commit_hash": "977e625",
+      "summary": "Add new task entries 42, 43, and 44 to devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:32Z"
+    },
+    {
+      "commit_hash": "97e1781",
+      "summary": "Fix ticket ID lowercasing and preserve assignee name in MemoryTicketStore assignment",
+      "tasks_updated": [],
+      "tasks_progressed": [
+        "29",
+        "30"
+      ],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:32Z"
+    },
+    {
+      "commit_hash": "b1950d7",
+      "summary": "Update CI run timestamps and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "595a098",
+      "summary": "Update CI timestamps and issue sync metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "f65c560",
+      "summary": "Update CI status timestamps and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "c06af7c",
+      "summary": "Update CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "c0629d5",
+      "summary": "Update CI run timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    },
+    {
+      "commit_hash": "034b7b5",
+      "summary": "Update CI run metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:26:30Z"
+    }
+  ],
   "state_commits": [],
   "reviews": [
     {
