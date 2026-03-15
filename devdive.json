@@ -464,6 +464,17 @@
           "detected_at": "2026-03-15T08:13:49Z"
         }
       ]
+    },
+    {
+      "reviewed_at": "2026-03-15T08:17:18Z",
+      "findings": [
+        {
+          "file": "server/app.ts",
+          "finding": "Applied requireAdmin middleware to PATCH /api/tickets/:id/assignee route before admin auth is fully implemented, contrary to plan that auth protects only audit routes.",
+          "severity": "warning",
+          "detected_at": "2026-03-15T08:17:18Z"
+        }
+      ]
     }
   ],
   "init_commit": "9704126c0bd0d9a9a174ade111f004e19d1e059b",
