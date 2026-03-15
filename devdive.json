@@ -157,8 +157,8 @@
   ],
   "ci": {
     "status": "passing",
-    "last_run": "2026-03-15T08:29:41Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23106718531"
+    "last_run": "2026-03-15T08:30:48Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23106733495"
   },
   "nudges": [],
   "commits": [
@@ -399,20 +399,6 @@
         "34"
       ],
       "analysed_at": "2026-03-15T08:28:50Z"
-    },
-    {
-      "commit_hash": "e057417",
-      "summary": "Update devdive.json to mark tasks 33-34 in_progress and record progress for tasks 29-34",
-      "tasks_updated": [],
-      "tasks_progressed": [
-        "29",
-        "30",
-        "31",
-        "32",
-        "33",
-        "34"
-      ],
-      "analysed_at": "2026-03-15T08:30:19Z"
     }
   ],
   "state_commits": [],
