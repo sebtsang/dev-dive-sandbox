@@ -5,56 +5,70 @@
   "project": {
     "name": "dev-dive-sandbox",
     "repo": "sebtsang/dev-dive-sandbox",
-    "created_at": "2026-03-15T06:45:42Z"
+    "created_at": "2026-03-15T06:52:33Z"
   },
   "tasks": [
     {
-      "id": "22",
-      "title": "Implement ticket assignment PATCH endpoint",
-      "description": "Add a PATCH /api/tickets/:id/assignee route that validates the payload, updates the store, and returns the updated ticket or 501 on failure.",
+      "id": "29",
+      "title": "Implement ticket assignment endpoint",
+      "description": "Add PATCH /api/tickets/:id/assignee handler that validates payload, updates the ticket in the store, and returns the updated ticket or appropriate error codes.",
       "status": "open",
       "estimate_hours": 5,
-      "design_notes": "Use Express router with async handler and inject the active TicketStore via a request-scoped provider.",
-      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/22",
+      "design_notes": "Use existing validation utilities (e.g., Zod) and return 200 with the updated ticket to keep response shape consistent across APIs.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/29",
       "labels": [
         "backend",
-        "api"
+        "api",
+        "testing"
       ]
     },
     {
-      "id": "23",
-      "title": "Add assignTicket method to MemoryTicketStore",
-      "description": "Extend the in‑memory store to implement assignTicket(id, assignee) and persist changes for the lifetime of the process.",
+      "id": "30",
+      "title": "Add assignment logic to MemoryTicketStore",
+      "description": "Extend MemoryTicketStore to support updating a ticket's assignee field while preserving in‑memory state and emitting events for consistency.",
       "status": "open",
       "estimate_hours": 3,
-      "design_notes": "Update the TicketStore interface to include assignTicket and keep the implementation pure with minimal side effects.",
-      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/23",
+      "design_notes": "Implement a new method assignTicket(id, assignee) adhering to the TicketStore interface for easy swapping with other stores.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/30",
       "labels": [
         "backend",
         "refactor"
       ]
     },
     {
-      "id": "24",
-      "title": "Create UI controls for ticket assignment in client",
-      "description": "Add a dropdown or autocomplete in the ticket detail view to select an agent and call the shared API client’s assign endpoint.",
+      "id": "31",
+      "title": "Create assignment UI controls in React",
+      "description": "Build a dropdown of agents and an Assign button in the ticket detail view, calling the shared API client to PATCH the assignee.",
       "status": "open",
       "estimate_hours": 6,
-      "design_notes": "Leverage React context for the API client and optimistic UI update while handling error states.",
-      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/24",
+      "design_notes": "Leverage the existing shared/api.ts client for type‑safe calls and update local state on success to avoid a full reload.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/31",
       "labels": [
         "frontend",
         "api"
       ]
     },
     {
-      "id": "25",
-      "title": "Implement SQLiteTicketStore with migrations",
-      "description": "Build a SQLite‑backed TicketStore, create migration scripts for tickets and audit tables, and wire it via an env flag.",
+      "id": "32",
+      "title": "Write tests for assignment flow",
+      "description": "Add Vitest/Supertest cases covering successful assignment, validation failures, and 401/403 when not authorized.",
+      "status": "open",
+      "estimate_hours": 4,
+      "design_notes": "Mock the MemoryTicketStore and reuse existing test setup to keep test suite fast and deterministic.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/32",
+      "labels": [
+        "testing",
+        "backend"
+      ]
+    },
+    {
+      "id": "33",
+      "title": "Build SQLiteTicketStore with migrations",
+      "description": "Create a SQLite-backed TicketStore implementation, schema migrations, and seed logic mirroring the in‑memory data shape.",
       "status": "open",
       "estimate_hours": 8,
-      "design_notes": "Use better-sqlite3 for synchronous queries and a singleton DB connection injected where TicketStore is required.",
-      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/25",
+      "design_notes": "Use the 'better-sqlite3' library for synchronous queries and store migration scripts under a new db/migrations folder.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/33",
       "labels": [
         "backend",
         "database",
@@ -62,61 +76,69 @@
       ]
     },
     {
-      "id": "26",
-      "title": "Enforce admin role on audit log route via auth middleware",
-      "description": "Update the auth middleware to read a JWT, verify admin claims, and reject non‑admin requests to /api/audit with 403.",
+      "id": "34",
+      "title": "Wire server to use configurable TicketStore",
+      "description": "Introduce an environment variable to select between MemoryTicketStore and SQLiteTicketStore at startup and inject the chosen store into the Express app.",
       "status": "open",
-      "estimate_hours": 4,
-      "design_notes": "Separate role‑checking logic into a reusable helper to keep middleware composable.",
-      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/26",
+      "estimate_hours": 3,
+      "design_notes": "Apply the factory pattern in server/app.ts to keep store selection isolated from route definitions.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/34",
       "labels": [
         "backend",
-        "auth"
+        "refactor"
       ]
     },
     {
-      "id": "27",
-      "title": "Create audit log endpoint backed by SQLite",
-      "description": "Add GET /api/audit that queries the SQLite audit table and returns recent admin actions, protected by the admin auth middleware.",
+      "id": "35",
+      "title": "Implement admin auth middleware and protect audit routes",
+      "description": "Complete the placeholder auth middleware to verify JWT admin claims and reject non‑admin requests with 403 on audit‑related endpoints.",
       "status": "open",
       "estimate_hours": 5,
-      "design_notes": "Paginate results and map DB rows to shared contract types before responding.",
-      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/27",
+      "design_notes": "Reuse existing auth utils, add role checking, and register the middleware only on /api/audit routes.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/35",
       "labels": [
+        "auth",
         "backend",
-        "api",
-        "database"
+        "api"
       ]
     },
     {
-      "id": "28",
-      "title": "Add integration tests for assignment, persistence, and auth",
-      "description": "Write Vitest/Supertest tests covering the PATCH assignment flow, SQLite store operations, and admin‑only audit access.",
+      "id": "36",
+      "title": "Add audit log endpoint and frontend panel",
+      "description": "Create GET /api/audit that returns recent audit entries from SQLite and display them in a new admin‑only panel in the React dashboard.",
       "status": "open",
       "estimate_hours": 6,
-      "design_notes": "Spin up an in‑memory SQLite DB for tests and use a mock JWT with admin claim for auth scenarios.",
-      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/28",
+      "design_notes": "Persist audit records via a dedicated SQLiteAuditLog table and conditionally render the panel based on user.role === 'admin'.",
+      "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/36",
       "labels": [
-        "testing",
-        "backend"
+        "backend",
+        "frontend",
+        "auth"
       ]
     }
   ],
   "ci": {
     "status": "passing",
-    "last_run": "2026-03-15T05:46:07Z",
-    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23104403530"
+    "last_run": "2026-03-15T06:46:09Z",
+    "workflow_url": "https://github.com/sebtsang/dev-dive-sandbox/actions/runs/23105251359"
   },
   "nudges": [],
   "commits": [
     {
-      "commit_hash": "c90c91c",
-      "summary": "Add CI workflow, .env example, .gitignore, and README",
+      "commit_hash": "9704126",
+      "summary": "Update .gitignore to ignore web/node_modules and devdive.json",
       "tasks_updated": [],
       "tasks_progressed": [],
-      "analysed_at": "2026-03-15T06:45:44Z"
+      "analysed_at": "2026-03-15T06:52:35Z"
+    },
+    {
+      "commit_hash": "c90c91c",
+      "summary": "Add project scaffolding: .env.example, CI workflow, .gitignore, and README",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "analysed_at": "2026-03-15T06:52:35Z"
     }
   ],
   "reviews": [],
-  "init_commit": "c90c91c4552ce221a79c9ec170df8cc3dac2ca14"
+  "init_commit": "9704126c0bd0d9a9a174ade111f004e19d1e059b"
 }
