@@ -12,7 +12,7 @@
       "id": "29",
       "title": "Implement ticket assignment endpoint",
       "description": "Add PATCH /api/tickets/:id/assignee handler that validates the request payload, updates the ticket in the store, and returns the updated ticket or appropriate error codes.",
-      "status": "todo",
+      "status": "review",
       "estimate_hours": 4,
       "design_notes": "Use existing Zod validation utilities, return HTTP 200 with the updated ticket JSON to keep response shape consistent across APIs.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/29",
@@ -23,14 +23,14 @@
       ],
       "priority": 1,
       "advice": "Implement the PATCH route, use Zod for payload validation, call MemoryTicketStore.assignTicket, and return the updated ticket with status 200. Add proper error handling for missing ticket (404) and validation errors (400).",
-      "updated_at": "2026-03-15T08:40:42Z",
+      "updated_at": "2026-03-15T09:07:39Z",
       "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
       "id": "30",
       "title": "Add assignment logic to MemoryTicketStore",
       "description": "Extend MemoryTicketStore to support updating a ticket's assignee field while preserving in‑memory state and emitting events for consistency.",
-      "status": "todo",
+      "status": "review",
       "estimate_hours": 3,
       "design_notes": "Introduce a new assignTicket(id, assignee) method that conforms to the TicketStore interface; ensure existing get/set methods remain unchanged.",
       "issue_url": "https://github.com/sebtsang/dev-dive-sandbox/issues/30",
@@ -40,7 +40,7 @@
       ],
       "priority": 2,
       "advice": "Add an assignTicket method to MemoryTicketStore that updates the assignee field in the in‑memory map and emits any required events. Update the TicketStore interface accordingly.",
-      "updated_at": "2026-03-15T08:40:42Z",
+      "updated_at": "2026-03-15T09:07:39Z",
       "advice_posted_at": "2026-03-15T09:06:59Z"
     },
     {
@@ -351,10 +351,161 @@
       "tasks_progressed": [],
       "status_decisions": null,
       "analysed_at": "2026-03-15T08:40:17Z"
+    },
+    {
+      "commit_hash": "362b678",
+      "summary": "Update CI metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:29Z"
+    },
+    {
+      "commit_hash": "74922ad",
+      "summary": "Update CI status timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:29Z"
+    },
+    {
+      "commit_hash": "3720399",
+      "summary": "Reverts ticket assignment tasks to todo status in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:30Z"
+    },
+    {
+      "commit_hash": "7f4fe74",
+      "summary": "Update CI timestamps and sync metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:29Z"
+    },
+    {
+      "commit_hash": "58f22af",
+      "summary": "Update CI run timestamps and sync metadata in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:29Z"
+    },
+    {
+      "commit_hash": "eff72c4",
+      "summary": "Update CI run metadata timestamps in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:29Z"
+    },
+    {
+      "commit_hash": "7688c96",
+      "summary": "Updates devdive.json marking ticket assignment endpoint and store logic tasks as complete",
+      "tasks_updated": [
+        "29",
+        "30"
+      ],
+      "tasks_progressed": [],
+      "status_decisions": [
+        {
+          "task_id": "29",
+          "from_status": "todo",
+          "to_status": "review",
+          "reason": "Create a PR reviewing the PATCH /api/tickets/:id/assignee handler and merge once approved."
+        },
+        {
+          "task_id": "30",
+          "from_status": "todo",
+          "to_status": "review",
+          "reason": "Open a PR for the MemoryTicketStore.assignTicket implementation and request code review."
+        }
+      ],
+      "analysed_at": "2026-03-15T09:07:30Z"
+    },
+    {
+      "commit_hash": "ba609cd",
+      "summary": "Normalize ticket ID handling and preserve assignee name in memory store.",
+      "tasks_updated": [],
+      "tasks_progressed": [
+        "29",
+        "30"
+      ],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:31Z"
+    },
+    {
+      "commit_hash": "796ba8d",
+      "summary": "Update CI metadata timestamps and workflow URL in devdive.json",
+      "tasks_updated": [],
+      "tasks_progressed": [],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:29Z"
+    },
+    {
+      "commit_hash": "acd4c29",
+      "summary": "Fix ticket ID handling and correct assignee name assignment in memory store.",
+      "tasks_updated": [
+        "30"
+      ],
+      "tasks_progressed": [
+        "29"
+      ],
+      "status_decisions": [],
+      "analysed_at": "2026-03-15T09:07:31Z"
     }
   ],
   "state_commits": [],
-  "reviews": [],
+  "reviews": [
+    {
+      "reviewed_at": "2026-03-15T09:07:28Z",
+      "findings": [
+        {
+          "file": "devdive.json",
+          "finding": "Task 29 'Implement ticket assignment endpoint' remains 'todo' despite commits indicating assignment logic added.",
+          "severity": "warning",
+          "detected_at": "2026-03-15T09:07:28Z"
+        },
+        {
+          "file": "devdive.json",
+          "finding": "Task 30 'Add assignment logic to MemoryTicketStore' still 'todo' while code changes added the logic.",
+          "severity": "warning",
+          "detected_at": "2026-03-15T09:07:28Z"
+        },
+        {
+          "file": "devdive.json",
+          "finding": "Task 31 'Create assignment UI controls in React' marked 'in_progress' but no frontend files changed.",
+          "severity": "info",
+          "detected_at": "2026-03-15T09:07:28Z"
+        },
+        {
+          "file": "devdive.json",
+          "finding": "Task 32 'Write tests for assignment flow' marked 'in_progress' with no test files added.",
+          "severity": "info",
+          "detected_at": "2026-03-15T09:07:28Z"
+        },
+        {
+          "file": "devdive.json",
+          "finding": "Task 33 'Build SQLiteTicketStore with migrations' marked 'in_progress' though no DB migration files exist.",
+          "severity": "warning",
+          "detected_at": "2026-03-15T09:07:28Z"
+        },
+        {
+          "file": "devdive.json",
+          "finding": "Task 34 'Wire server to use configurable TicketStore' marked 'in_progress' but server/app.ts unchanged.",
+          "severity": "warning",
+          "detected_at": "2026-03-15T09:07:28Z"
+        },
+        {
+          "file": "devdive.json",
+          "finding": "Task 35 'Implement admin auth middleware and protect audit routes' marked 'in_progress' while middleware remains placeholder.",
+          "severity": "warning",
+          "detected_at": "2026-03-15T09:07:28Z"
+        }
+      ]
+    }
+  ],
   "init_commit": "22f40e1096c0f35ad8be1609bc73497f3304adc3",
   "sync": {
     "last_issue_sync": "2026-03-15T09:07:28Z",
